@@ -22,7 +22,7 @@ from linebot.models import *
 app = Flask(__name__)
 
 # 必須放上自己的Channel Access Token
-line_bot_api = LineBotApi('kmRJwK0lUv3/NOQT3QwqO+tLV0c77quOM+QgO+ZoAaQLAp/Rar8nW9Yyd5biy/ygZEacENGElsGTuO8c2+I+jHolY0JN5/hVlfWfJIJwrwot1bPoGdXQif95x7PiDMqlxOQqXymEs56EXhMeLpbJswdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('hasav1yTh4IWtiMEsnArqYIP2yvLc7fciTgFDo84I090TLH3kjZwJ0f+V8oPT6c8WDg+ISp/lUw6ewAvQJFStEabiEG0V4zhD0jv+vWr3DcWCgm90vbcNBX4PazqOf5QmxmegujhUm5PlafJ3Z5QtwdB04t89/1O/w1cDnyilFU=')
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('9c9bf00c6a2bbb8cef9ef817d43aead1')
 
