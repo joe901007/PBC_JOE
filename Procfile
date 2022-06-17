@@ -1,1 +1,1 @@
-web: python shengxue.py
+web: python kai_jia.py
