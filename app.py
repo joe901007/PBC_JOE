@@ -63,9 +63,7 @@ def callback():
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    if event.message.text == '抽獎':
-        message = TextSendMessage(text='蔡心喬是小豬豬')
+def handle_message(event):    
         href_list = []
         header_list = []
         new_header = []
@@ -73,8 +71,6 @@ def handle_message(event):
         ua = UserAgent()
         user_agent = ua.random
         headers = {'user-agent': user_agent}
-        
-        save_message = []
         def run():
             global dr
             chrome_options = webdriver.ChromeOptions()
@@ -88,7 +84,7 @@ def handle_message(event):
             dr.maximize_window()
             dr.get('http://www.facebook.com')
         
-        if __name__ == '__main__':
+        if __name__ == '__main__' and event.message.text == '抽獎':
             run()
         dr.find_element(By.NAME,"email").send_keys("joe901007@yahoo.com.tw")  # 帳號
         time.sleep(3)
@@ -98,11 +94,7 @@ def handle_message(event):
         dr.get("https://www.facebook.com/groups/248305265374276")
         length = 0
         time.sleep(2)
-        
-        message = TextSendMessage(text='菜心喬是小豬豬')
-        
-        test = TextSendMessage(text='過來')
-        line_bot_api.reply_message(event.reply_token,test)
+       
 
         for i in range(5): 	# 讓頁面滾動5次
             #article = []
