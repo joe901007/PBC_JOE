@@ -11,5 +11,4 @@ scipy
 selenium
 fake_useragent
 requests
-re
-os
+
