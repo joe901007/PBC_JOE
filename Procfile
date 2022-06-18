@@ -1,1 +1,1 @@
-web: python kai_jia.py
+web: python newapp.py
