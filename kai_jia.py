@@ -14,11 +14,18 @@ from fake_useragent import UserAgent
 from linebot import LineBotApi
 from linebot.models import TextSendMessage
 from linebot.models import *
+from linebot import LineBotApi
+from linebot.models import TextSendMessage
+import time
 # 自動推播
 import re
+# 必須放上自己的Channel Access Token
+line_bot_api = LineBotApi('hasav1yTh4IWtiMEsnArqYIP2yvLc7fciTgFDo84I090TLH3kjZwJ0f+V8oPT6c8WDg+ISp/lUw6ewAvQJFStEabiEG0V4zhD0jv+vWr3DcWCgm90vbcNBX4PazqOf5QmxmegujhUm5PlafJ3Z5QtwdB04t89/1O/w1cDnyilFU=')
+# 請填入您的ID
+yourID = 'U8e9ac6911787e11c263670660337a474'
 new_header = []
 new_href = []
-
+line_bot_api.push_message(yourID, TextSendMessage(text='你可以開始了'))
 #line_bot_api = LineBotApi('npHX/BAgLnGzrMDuTXPdwYZOmMc6S7zZzh1FOaxjgrKuloHrShOzRNV3A8ImRST1SVoCSCbHjwjEYF5zKpnL4M25wJE4paVUu3vWdXIsVDcXHvRwbz3xh6s/SdQeacX0lTsyLFVzsmiezV7MdjhPigdB04t89/1O/w1cDnyilFU=')
 '''@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -133,59 +140,9 @@ for i in range(len(new_header)):
 
 
 
-
-
-
-# content = MIMEMultipart()
-# content['subject'] = '無情的抽獎機器-抽獎資訊'
-# content['from'] = 'pbc1102.17@gmail.com'
-# content['to'] = 'eileencyp@gmail.com'  # 改成用戶信箱
-# txt = string
-# content.attach(MIMEText(txt))
-
-
-# with smtplib.SMTP(host = 'smtp.gmail.com', port = '587') as smtp:
-#     try:
-#         smtp.ehlo()
-#         smtp.starttls()
-#         smtp.login('pbc1102.17@gmail.com', 'yzsa ltqk eyhb qpoo')
-#         smtp.send_message(content)
-#         print('Complete!')
-#     except Exception as e:
-#         print('Error message:', e)
-
-# line_bot_api = LineBotApi('J3OnLv/uN9Z0N+G8fLigBRT6wPQ9nePO9jE6zd5zhQdIH2cOfV/IEObpN9/xTaCkGVI4iTKUU+jlE60SQiV0AXw5AXCKdwf0080xcAdJIEsoYefaPJjUcVjEM5MHq9xsXPfRFdpnXMB19Cjx6ewD6QdB04t89/1O/w1cDnyilFU=')
-# # 請填入您的ID
-# yourID = 'U39cbf03829851f3d84f46ecae361c43f'
-# # 主動推播訊息
-
-#   #print(i)
-# line_bot_api.push_message(yourID, 
-#                           TextSendMessage(text="i"))
-
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  3 21:37:37 2021
-
-@author: Ivan
-版權屬於「行銷搬進大程式」所有，若有疑問，可聯絡ivanyang0606@gmail.com
-
-Line Bot聊天機器人
-第三章 互動回傳功能
-推播push_message與回覆reply_message
-"""
-
-from linebot import LineBotApi
-from linebot.models import TextSendMessage
-import time
-
-# 必須放上自己的Channel Access Token
-line_bot_api = LineBotApi('hasav1yTh4IWtiMEsnArqYIP2yvLc7fciTgFDo84I090TLH3kjZwJ0f+V8oPT6c8WDg+ISp/lUw6ewAvQJFStEabiEG0V4zhD0jv+vWr3DcWCgm90vbcNBX4PazqOf5QmxmegujhUm5PlafJ3Z5QtwdB04t89/1O/w1cDnyilFU=')
-# 請填入您的ID
-yourID = 'U8e9ac6911787e11c263670660337a474'
 # 主動推播訊息
 
   #print(i)
 line_bot_api.push_message(yourID, 
                           TextSendMessage(text=string))
+# 用迴圈推播訊息
